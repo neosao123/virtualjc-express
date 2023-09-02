@@ -1,0 +1,3511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      border: 1px solid silver;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="width:100%;margin:2.0rem;">
+    <div style="width:95%; color: #3b7693; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">
+      <!-- First Page - Customer Order - Start -->
+
+      <!-- Header Section -->
+      <div style="height: 100px; margin-top: 1.2rem;">
+        <div style="display: inline-block;">
+          <div style="margin: .2rem; padding: .2rem;">
+            <h2 style="margin: 0; padding: 0;">TOYOTA TANZANIA LTD.</h2>
+          </div>
+          <div style="margin: .2rem; padding: .2rem;">
+            <!-- <img style="display: inline-block; margin: 0rem .2rem;" src="<%= checked %>" width="20px" height="20px"> -->
+            <h2 style="display: inline-block; margin: 0rem .2rem; padding: 0;">TOYOTA</h2>
+            <h2 style="display: inline-block; font-weight: 100; margin: 0 2rem;">Customer Order</h2>
+          </div>
+        </div>
+        <div style="display: inline-block; height: 84px; margin-left: 12.5rem; padding: .2rem;">
+          <div style="width:100%; height: 40%; padding: .5rem;">
+            <h2 style="text-align: center; font-size: 1.5rem; font-weight: 800;"><strong>
+                <%= orderNo %>
+              </strong></h2>
+          </div>
+        </div>
+        <div style="display: block; height: 100px;  padding: .2rem; float: right;">
+          <div
+            style="border: .1rem solid #3b7693; text-align: center; width:100%; height: 40%; margin-top: 2.5rem; padding-top: .2rem; padding-bottom: .1rem; background-color: #f7fbff;">
+            <img src="<%- waiting==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+              style="vertical-align: -5%; margin-left: .5rem;" />
+            <h2 style="display: inline-block; margin: .2rem; font-weight: 200;">WAITING</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- First 2 Tables -->
+      <div style="width: 100%; margin: .8rem .0rem;">
+
+        <!-- Table 1 -->
+        <div style="display: inline-block; width: 52%;">
+          <table style="width: 100%; font-size: .7rem; border: .1rem solid #3b7693;">
+            <tr>
+              <th style="text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <img src="<%- PM==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">PM</span>
+                </div>
+              </th>
+              <th style="text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <span>
+                    <%= KM %>
+                  </span>
+                  <span>K</span>
+                </div>
+              </th>
+              <th style="text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <img src="<%- GR==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">GR</span>
+                </div>
+              </th>
+              <th style="text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <img src="<%- WR==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">WR</span>
+                </div>
+              </th>
+              <th style="text-align: center;">
+                <div style="margin: .6rem .1rem;">
+                  <img src="<%- internal==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">Internal</span>
+                </div>
+              </th>
+              <th style="border-left: .1rem solid #3b7693; text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <img src="<%- appointment==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">Appointment</span>
+                </div>
+              </th>
+              <th style="text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <img src="<%- walkIn==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">Walk-in</span>
+                </div>
+              </th>
+            </tr>
+            <tr style="border-bottom: .1rem solid #3b7693;">
+              <th colspan="2" style="text-align: left;">
+                <div style="margin: .6rem .7rem;">
+                  <img src="<%- pickUp==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  <span style="vertical-align: 30%;">Pick-up</span>
+                </div>
+              </th>
+              <td colspan="3" style="text-align: center;">
+                <div style="margin: .6rem .4rem;">
+                  <div></div>
+                </div>
+              </td>
+              <td colspan="2">
+                <div style="margin: .6rem .4rem; text-align: center;">
+                  <span></span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .15rem solid #3b7693;">
+              <th rowspan="2" colspan="2" style="text-align: center; font-size: .9rem; background-color: #dff0f8;">
+                <div style="color: #3b7693;">
+                  Reception
+                </div>
+              </th>
+              <td colspan="3">
+                <div style="margin: .5rem .4rem;">
+                  <span>Date : </span>
+                  <span>
+                    <%= receptionDate %>
+                  </span>
+                </div>
+              </td>
+              <td colspan="2">
+                <div style="margin: .5rem .4rem;">
+                  <span>Time: </span>
+                  <span>
+                    <%= receptionTime %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .15rem solid #3b7693;">
+              <td colspan="5">
+                <div style="margin: .5rem .4rem;">
+                  <span>Changes : </span>
+                  <span>
+                    <%= receptionChanges %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .15rem solid #3b7693;">
+              <th rowspan="2" colspan="2" style="text-align: center; font-size: .9rem; background-color: #dff0f8;">
+                <div>
+                  Delivery
+                </div>
+              </th>
+              <td colspan="3">
+                <div style="margin: .5rem .4rem;">
+                  <span>Date : </span>
+                  <span>
+                    <%= deliveryDate %>
+                  </span>
+                </div>
+              </td>
+              <td colspan="2">
+                <div style="margin: .5rem .4rem;">
+                  <span>Time: </span>
+                  <span>
+                    <%= deliveryTime %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .15rem solid #3b7693;">
+              <td colspan="5">
+                <div style="margin: .5rem .4rem;">
+                  <span>Changes : </span>
+                  <span>
+                    <%= deliveryChanges %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Table 2 -->
+        <div style="display: block; width: 47%; float: right; margin-bottom: .8rem;">
+          <table class="border-none" style="width: 100%; font-size: .7rem; border: .1rem solid #3b7693;">
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: center;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Repair Order No.: </span>
+                </div>
+              </th>
+              <td colspan="2">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= RepairOrderNo %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="border-left: .1rem solid #3b7693;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Date</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= RepairOrderDate %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Service Invitation</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- serviceInvitation=='failed' ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" />
+                  <span style="vertical-align: 30%;">Failed</span>
+                </div>
+              </td>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- serviceInvitation=='succeed' ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" />
+                  <span style="vertical-align: 30%;">Succeed</span>
+                </div>
+              </td>
+              <th colspan="1" style="border-left: .1rem solid #3b7693;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Date</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= serviceInvitationDate %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .2rem .4rem;">
+                  <span>B/O Parts</span>
+                </div>
+              </th>
+              <td colspan="2">
+                <div style="margin: .2rem .4rem;">
+                  <span>
+                    <%= BOparts %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .2rem .4rem;">
+                  <span>Staff <br /> Name</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .2rem .4rem;">
+                  <span>
+                    <%= BOpartsStaffName %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Appointment <br />Confirmation</span>
+                </div>
+              </th>
+              <td colspan="2">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= appointmentConfirmation %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Staff <br />Name</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= appointmentConfirmationStaffName %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .2rem .4rem;">
+                  <span>Parts Ordered</span>
+                </div>
+              </th>
+              <td colspan="2">
+                <div style="margin: .2rem .4rem;">
+                  <span>
+                    <%= partsOrdered %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Staff <br /> Name</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= partsOrderedStaffName %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Parts <br />Confirmed</span>
+                </div>
+              </th>
+              <td colspan="2">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= partsConfirmed %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Staff <br /> Name</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= partsConfirmedStaffName %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 3rd Table -->
+      <div style="width: 100%; margin: .8rem .0rem;">
+
+        <div style="width: 100%;">
+          <table style="width: 100%; font-size: .8rem; border: .15rem solid #3b7693;">
+            <tr style="border: .1rem solid #3b7693; text-align: center;">
+              <th colspan="4" style="text-align: center; width: 35%; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Customer Information</span>
+                </div>
+              </th>
+              <th colspan="4"
+                style="text-align: center; width: 30%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Vehicle Information</span>
+                </div>
+              </th>
+              <th colspan="4"
+                style="text-align: center; width: 35%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Previous Service Information</span>
+                </div>
+              </th>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1"
+                style="width: 9%; text-align: left; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  Name
+                </div>
+              </th>
+              <td colspan="3">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= cname %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1"
+                style="width: 8%; text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Vehicle <br /> Reg. No.</span>
+                </div>
+              </th>
+              <td colspan="3" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= vehicleRegNo %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1"
+                style="width: 10%; text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Job <br /> Type</span>
+                </div>
+              </th>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= jobType %>
+                  </span>
+                </div>
+              </td>
+
+              <th colspan="1"
+                style="width: 8%; text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>R/O <br /> No.</span>
+                </div>
+              </th>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= RoNo %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th style="text-align: left; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Address</span>
+                </div>
+              </th>
+              <td colspan="3">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= caddress %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Model <br />(Year)</span>
+                </div>
+              </th>
+              <td colspan="3" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= modelYear %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Odo. <br /> Read.</span>
+                </div>
+              </th>
+              <td style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= OdoRead %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Payment</span>
+                </div>
+              </th>
+              <td style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= Payment %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem; text-align: left;">
+                  <span>
+                    <span style="vertical-align: 30%;">Mobile <br />TEL No.</span>
+                  </span>
+                  <img src="<%- mobileTeleNumberStatus==true ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" />
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= mobileTeleNumberText %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1"
+                style="width: 6%; text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Available <br />Time</span>
+                </div>
+              </th>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .2rem .2rem;">
+                  <span>Date:</span><span style="margin-left: .1rem;">
+                    <%= availableDate %>
+                  </span><br />
+                  <span>Time: </span><span style="margin-left: .1rem;">
+                    <%= availableTime %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Model<br />Code</span>
+                </div>
+              </th>
+              <td colspan="3" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= modelCode %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Rec.<br />(Data & Time)</span>
+                </div>
+              </th>
+              <td colspan="3" style="text-align: center;">
+                <div style="margin: .3rem .4rem; display: flex; justify-content: space-evenly;">
+                  <span>
+                    <%= RecDate %>
+                  </span>
+                  <span style="margin: 0 .5rem">
+                    <%= RecTime %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="1" style="text-align: left; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span style="vertical-align: 30%;">Home <br /> TEL No.</span>
+                  <img src="<%- homeTeleNumberStatus==true ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" />
+                </div>
+              </th>
+              <td>
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= homeTeleNumberText %>
+                  </span>
+                </div>
+              </td>
+              <th rowspan="2" colspan="1"
+                style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Driven <br />By</span>
+                </div>
+              </th>
+              <td rowspan="2" colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- drivenByName=='owner' && drivenByStatus==true ? checked : unchecked %>" width="18px"
+                    height="18px" alt="" />
+                  <span style="margin-left: .3rem; vertical-align: 20%;">Owner</span><br />
+                  <img src="<%- drivenByName=='family' && drivenByStatus==true ? checked : unchecked %>" width="18px"
+                    height="18px" alt="" />
+                  <span style="margin-left: .3rem; vertical-align: 20%;">Family</span><br />
+                  <img src="<%- drivenByName=='others' && drivenByStatus==true ? checked : unchecked %>" width="18px"
+                    height="18px" alt="" />
+                  <span style="margin-left: .3rem; vertical-align: 20%;">Others <br />( <%- drivenByName=='others' &&
+                      drivenByStatus==true ? drivenByText : "" %> )</span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>VIN No.</span>
+                </div>
+              </th>
+              <td colspan="3">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= vinNo %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Del.<br />(Data & Time)</span>
+                </div>
+              </th>
+              <td colspan="3" style="text-align: center;">
+                <div style="margin: .3rem .4rem; display: flex; justify-content: space-evenly;">
+                  <span>
+                    <%= DelDate %>
+                  </span>
+                  <span style="margin: 0 .5rem">
+                    <%= DelTime %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th style="background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem; text-align: left;">
+                  <span style="vertical-align: 30%;">Office <br />TEL No.</span>
+                  <img src="<%- officeTeleNumberStatus==true ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" />
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= officeTeleNumberText %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Color <br /> Code</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= colorCode %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1"
+                style="width: 6%; text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>E/G<br />No.</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= egNumber %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Car<br />Wash</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= carWashDetailedInfo %>
+                  </span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Replaced<br />Parts</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <% for (element of replacedParts) { %>
+                      <%= element %>
+                        <% } %>
+                  </span>
+                </div>
+              </td>
+
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th style="text-align: left; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span style="vertical-align: 30%;">Email</span>
+                  <img src="<%- cemailStatus==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="margin-left: .8rem;" />
+                </div>
+              </th>
+              <td colspan="3">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= cemailText %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Sale <br /> Date</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= saleDate %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>DLR <br /> Code</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= dlrNo %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>SA</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= SA %>
+                  </span>
+                </div>
+              </td>
+
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>TECH</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= tech %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th rowspan="2" style="text-align: left; border-bottom: .15rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span style="vertical-align: 30%;">Others</span>
+                  <img src="<%- cemailStatus==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="margin-left: .4rem;" />
+                </div>
+              </th>
+              <td colspan="3" rowspan="2" style="border-bottom: .15rem solid #3b7693;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= othersText %>
+                  </span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>SSC / SC <br /> Info.</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- sscScInfo=true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -20%;" />
+                  <span>NA</span>
+                </div>
+              </td>
+              <th style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Op.<br /> No.</span>
+                </div>
+              </th>
+              <td colspan="1">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= opNo %>
+                  </span>
+                </div>
+              </td>
+              <th rowspan="2"
+                style="text-align: center; border-bottom: .15rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Tech<br /> Advise</span>
+                </div>
+              </th>
+              <td colspan="3" rowspan="2" style="border-bottom: .15rem solid #3b7693;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= techAdvice %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th style="text-align: center; border-bottom: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Completed<br /> Op. No.</span>
+                </div>
+              </th>
+              <td colspan="3" style="border-bottom: .15rem solid #3b7693;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= completedOpNo %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 4th Table -->
+      <div style="width: 100%; margin: .8rem .0rem;">
+
+        <div style="width: 100%;">
+          <table style="width: 100%; font-size: .8rem; border: .15rem solid #3b7693;">
+            <tr style="border: .1rem solid #3b7693; text-align: center;">
+              <th colspan="8" style="text-align: center; width: 60%; background-color: #dff0f8;">
+                <div style="margin: .5rem .4rem;">
+                  <span>Customer's Request / Concerns (in customer words)</span>
+                </div>
+              </th>
+              <th colspan="2"
+                style="text-align: center; width: 20%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .5rem .4rem;">
+                  <img src="<%- requestForTA==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -20%;" />
+                  <span>Request For TA</span>
+                </div>
+              </th>
+              <th colspan="2"
+                style="text-align: center; width: 20%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .5rem .4rem;">
+                  <img src="<%- appointmentCustReq==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -20%;" />
+                  <span>Appointment</span>
+                </div>
+              </th>
+            </tr>
+            <tr style="border: .1rem solid #3b7693; text-align: center; ">
+              <td rowspan="3" colspan="8">
+                <div style="margin: .5rem .4rem;">
+                  <span>
+                    <%= customerRequest %>
+                  </span>
+                </div>
+              </td>
+              <td colspan="2">
+                <div style="margin: .2rem .3rem; text-align: left;">
+                  <span style="text-align: left;">Date</span><br />
+                </div>
+                <div style="margin: .2rem .3rem; text-align: center;">
+                  <span style="text-align: center;">
+                    <%= requestDate %>
+                  </span>
+                </div>
+              </td>
+              <td colspan="2">
+                <div style="margin: .2rem .3rem; text-align: left;">
+                  <span style="text-align: left;">Date</span><br />
+                </div>
+                <div style="margin: .2rem .3rem; text-align: center;">
+                  <span style="text-align: center;">
+                    <%= appointmentDate %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693; text-align: center; ">
+
+              <td colspan="2">
+                <div style="margin: .2rem .3rem; text-align: left;">
+                  <span style="text-align: left;">Time</span><br />
+                </div>
+                <div style="margin: .2rem .3rem; text-align: center;">
+                  <span style="text-align: center;">
+                    <%= requestTime %>
+                  </span>
+                </div>
+              </td>
+              <td colspan="2">
+                <div style="margin: .2rem .3rem; text-align: left;">
+                  <span style="text-align: left;">Time</span><br />
+                </div>
+                <div style="margin: .2rem .3rem; text-align: center;">
+                  <span style="text-align: center;">
+                    <%= appointmentTime %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693;">
+              <th colspan="2" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .5rem .4rem;">
+                  <span>Staff Name</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: center;">
+                <div style=" margin: .5rem .4rem;">
+                  <span>
+                    <%= custReqStaffName %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr style="border: .1rem solid #3b7693; text-align: center;">
+              <th colspan="7" style="background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Job Details / Parts Replacements</span>
+                </div>
+              </th>
+              <th colspan="1" style="background-color: #dff0f8; width: 10%;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Parts No.</span>
+                </div>
+              </th>
+              <th colspan="1" style="background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Quantity</span>
+                </div>
+              </th>
+              <th colspan="1" style="background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Labor Hours</span>
+                </div>
+              </th>
+              <th colspan="2" style="background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Estimation</span>
+                </div>
+              </th>
+            </tr>
+            <% for (var i=0; i<jobdetails_partReplace.length; i++) { %>
+              <tr style="border: .1rem solid #3b7693; text-align: center;">
+                <td colspan="7">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= jobdetails_partReplace[i].details %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= jobdetails_partReplace[i].partNo %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= jobdetails_partReplace[i].quantity %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= jobdetails_partReplace[i].labourHours %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= jobdetails_partReplace[i].Estimation %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <% } %>
+                <tr style="border: .1rem solid #3b7693; text-align: center;">
+                  <td colspan="7">
+                    <div style="margin: .3rem .4rem;">
+                      <span></span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="background-color: #dff0f8; text-align: left;">
+                    <div style="display:inline-block; text-align: left; margin: .3rem .4rem;">
+                      <span><b>Labor <br /> Total</b></span>
+                    </div>
+                    <div style="display:inline-block; margin: .3rem .4rem;">
+                      <span>
+                        <%= labourTotal %>
+                      </span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="background-color: #dff0f8;">
+                    <div style="display:inline-block; margin: .3rem .4rem;">
+                      <span><b>Parts <br /> Total</b></span>
+                    </div>
+                    <div style="display:inline-block; margin: .3rem .4rem;">
+                      <span>
+                        <%= partsTotal %>
+                      </span>
+                    </div>
+                  </td>
+                  <td colspan="1">
+                    <div style="margin: .3rem .4rem;">
+                      <span></span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="background-color: #dff0f8;">
+                    <div style="margin: .3rem .4rem;">
+                      <span><b>Grand <br /> Total</b></span>
+                    </div>
+                  </td>
+                  <td colspan="1">
+                    <div style="margin: .3rem .4rem;">
+                      <span>
+                        <%= grandTotal %>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- 5th Table -->
+      <div style="width: 100%; margin: .8rem .0rem; page-break-before: always;">
+
+        <div style="width: 100%;">
+          <table style="width: 100%; font-size: .8rem; border: .15rem solid #3b7693;">
+            <tr style="border: .1rem solid #3b7693; text-align: center;">
+              <th colspan="4" style="text-align: center; width: 35%; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Walk-around Check</span>
+                </div>
+              </th>
+              <th colspan="2"
+                style="text-align: center; width: 20%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Floor Mat Condition</span>
+                </div>
+              </th>
+              <th colspan="4"
+                style="text-align: center; width: 25%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Confirmation</span>
+                </div>
+              </th>
+              <th colspan="2"
+                style="text-align: center; width: 25%; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Reception</span>
+                </div>
+              </th>
+            </tr>
+            <!-- Tools... -->
+            <tr>
+              <td rowspan="10" colspan="2" style="width: 15%;">
+                <div style="margin: .3rem .4rem; position: relative;">
+                  <img src="<%= carImg %>" alt="" height="100%" style="width: 100%; transform: rotate (90deg);">
+                  <% if(front===true ){ %>
+                    <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 7%; 
+                  left: 46%;
+                  width: 28px; 
+                  height: 28px;">
+                    <% } %>
+                      <% if(frontRight===true ){ %>
+                        <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 24%; 
+                  left: 78%;
+                  width: 28px; 
+                  height: 28px;">
+                        <% } %>
+                          <% if(frontLeft===true ){ %>
+                            <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 24%; 
+                  left: 12%;
+                  transform: translate(-50%, -50%);
+                  width: 28px; 
+                  height: 28px;">
+                            <% } %>
+                              <% if(sideRight===true ){ %>
+                                <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 50%; 
+                  left: 78%;
+                  transform: translate(-50%, -50%);
+                  width: 28px; 
+                  height: 28px;">
+                                <% } %>
+                                  <% if(sideLeft===true ){ %>
+                                    <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 50%; 
+                  left: 14%;
+                  transform: translate(-50%, -50%);
+                  width: 28px; 
+                  height: 28px;">
+                                    <% } %>
+                                      <% if(rearRight===true ){ %>
+                                        <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 70%; 
+                  left: 12%;
+                  transform: translate(-50%, -50%);
+                  width: 28px; 
+                  height: 28px;">
+                                        <% } %>
+                                          <% if(rearLeft===true ){ %>
+                                            <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 70%; 
+                  left: 79%;
+                  transform: translate(-50%, -50%);
+                  width: 28px; 
+                  height: 28px;">
+                                            <% } %>
+                                              <% if(rear===true ){ %>
+                                                <img src="<%= crossImg %>" alt="" height="100%" style="position: absolute;
+                  top: 83%; 
+                  left: 46%;
+                  transform: translate(-50%, -50%);
+                  width: 28px; 
+                  height: 28px;">
+                                                <% } %>
+                </div>
+                <div style="display: inline-block; margin: .3rem .4rem;">
+                  <img src="<%= othersPath + customerSignaturePath %>" width="32px" height="15px" alt="" />
+                </div>
+              </td>
+              <td colspan="1" style="border: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Tools.............</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- tools==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- good==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Good</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>No Good</span>
+                </div>
+              </td>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Replaced Parts</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- replacedPartsOtherDetails==true ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" style="vertical-align:  -30%;" />
+                  <span>Yes</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- replacedPartsOtherDetails==false ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" style="vertical-align:  -30%;" />
+                  <span>No</span>
+                </div>
+              </td>
+              <td colspan="2" style="text-align: left; border-bottom: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Date</span>
+                  <span>
+                    <%= receptionDate %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <!-- Cig. lighter -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Cig. lighter.....</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- cigLighter==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- nonGenuine==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Non-Genuine</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- notFixed==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Not Fixed</span>
+                </div>
+              </td>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Car Wash</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- carWash==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                  <span>Yes</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- carWash==false ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                  <span>No</span>
+                </div>
+              </td>
+              <td colspan="2" style="text-align: left; border: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Time</span>
+                  <span>
+                    <%= receptionTime %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <!-- Spare Wheel..... -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Spare Wheel.....</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- spareWheel==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- doubleMat==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Double Mat</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- noGoodOthersStatus==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Others</span>
+                </div>
+              </td>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Valuable</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- valuable==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                  <span>Yes</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- valuable==false ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                  <span>No</span>
+                </div>
+              </td>
+              <td rowspan="2" colspan="2" style="text-align: left; border: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span></span>
+                </div>
+              </td>
+            </tr>
+            <!-- Radio/Cassete..... -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Radio/Cassete.....</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- radioCassete==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                </div>
+              </td>
+              <td rowspan="2" colspan="2" style="text-align: center;">
+                <div style="margin: .3rem .4rem;">
+                  <span style="text-align: left;">[</span>
+                  <span>
+                    <%= noGoodOthersStatus==true ? noGoodOthersText : "" %>
+                  </span>
+                  <span style="text-align: right;">]</span>
+                </div>
+              </td>
+              <td colspan="2" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Protective Covers</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- protectiveCoversSeat==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                  <span>Seat</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- protectiveCoversFloor==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                  <span>Floor</span>
+                </div>
+              </td>
+            </tr>
+            <!-- Lights Condition..... -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Lights Condition.....</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- lightCondition==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                </div>
+              </td>
+              <td rowspan="2" colspan="4" style="text-align: left;">
+                <div style="display: inline-block; margin: .3rem .4rem;">
+                  <span>Memo</span>
+                </div>
+                <div style="display: inline-block;">
+                  <img src="<%- accessoriesInstallation==true ? checked : unchecked %>" width="18px" height="18px"
+                    alt="" style="vertical-align: -30%;" />
+                  <p style="display: inline-block; margin-left: .3rem;">Accessories Installation</p>
+                </div>
+              </td>
+              <th rowspan="2" colspan="1" style="text-align: center; width: 6%; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Staff <br /> Name</span>
+                </div>
+              </th>
+              <td rowspan="2" colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= staffNameOtherDetails %>
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <!-- Fire Extingusher.... -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Fire Extingusher....</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- fireExtinguisher==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align:  -30%;" />
+                </div>
+              </td>
+              <th rowspan="1" colspan="2" style="text-align: center; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Payment Method</span>
+                </div>
+              </th>
+            </tr>
+            <!-- Damages / Dent.... -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Damages / Dent....</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- damageDent==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- cash==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Cash</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .2rem .3rem;">
+                  <img src="<%- creditCard==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Credit Card</span>
+                </div>
+              </td>
+              <td colspan="6" rowspan="4" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <span>
+                    <%= memoText %>
+                  </span>
+                </div>
+              </td>
+
+            </tr>
+            <!-- no of keys -->
+            <tr>
+              <td colspan="1" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>No of Keys........</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- noOfKeys==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- cheque==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Cheque</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: left;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- payMethodOthersStatus==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                    style="vertical-align: -30%;" />
+                  <span>Others</span>
+                </div>
+              </td>
+
+            </tr>
+            <tr>
+              <td colspan="1" style="border: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Instrument Cluster.............</span>
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <img src="<%- instrumentCluster==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                </div>
+              </td>
+              <td colspan="2" rowspan="2" style="text-align: center;">
+                <div style="margin: .3rem .4rem;">
+                  <span>[</span>
+                  <span>
+                    <%= payMethodOthersStatus==true ? payMethodOthersText : "" %>
+                  </span>
+                  <span>]</span>
+                </div>
+              </td>
+            </tr>
+            <!-- inspectedBy -->
+            <tr>
+              <td colspan="2" style="border-right: none;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Inspected By :- </span>
+                  <span>
+                    <%= inspectedBy %>
+                  </span>
+                </div>
+              </td>
+
+            </tr>
+            <!-- odometer -->
+            <tr>
+              <th colspan="1" style="text-align: left; background-color: #dff0f8; width: 10%;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Odometer <br /> Reading-in</span>
+                </div>
+              </th>
+              <td colspan="2" style="text-align: right; border: none;">
+                <div style="display: inline-block; margin: .3rem .4rem;">
+                  <img src="<%= othersPath + customerSignaturePath %>" width="32px" height="15px" alt="" />
+                </div>
+              </td>
+              <td colspan="1" style="text-align: right; border: none;">
+                <div style="display: inline-block; margin: .3rem .4rem;">
+                  <span>
+                    <%= odometerReading %>
+                  </span>
+                  <span style="margin: 0rem .3rem;">Km</span>
+                </div>
+              </td>
+              <th colspan="1" style="text-align: center; border-left: none; background-color: #dff0f8;">
+                <div style="margin: .3rem .4rem;">
+                  <span>Fuel</span>
+                </div>
+              </th>
+              <td colspan="1" style="text-align: center; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <% if(fuelLevel===0 ){ %>
+                    <span style="color: #D72626;"><strong>E</strong></span><span>__</span><span
+                      style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                      style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                      style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span>F</span>
+                    <% } else if(fuelLevel>= 1 && fuelLevel <= 25 ){ %>
+                        <span>E</span><span>__</span><img src="<%= downArrowRedOrange %>" alt="" width="14px"
+                          height="14px" style="margin: 0rem; padding: 0rem;" /><span>__</span><span
+                          style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                          style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span>F</span>
+                        <% }else if(fuelLevel>= 26 && fuelLevel<= 50 ){ %>
+                            <span>E</span><span>__</span><span
+                              style="font-size: .5rem; width: .2rem;">|</span><span>__</span><img
+                              src="<%= downArrowOrange %>" alt="" width="14px" height="14px"
+                              style="margin: 0rem; padding: 0rem;" /><span>__</span><span
+                              style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span>F</span>
+                            <% }else if(fuelLevel>= 51 && fuelLevel<=75 ){ %>
+                                <span>E</span><span>___</span><span
+                                  style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                                  style="font-size: .5rem; width: .2rem;">|</span><span>__</span><img
+                                  src="<%= downArrowYellow %>" alt="" width="14px" height="14px"
+                                  style="margin: 0rem; padding: 0rem;" /><span>__</span><span>F</span>
+                                <% }else{ %>
+                                  <span>E</span><span>___</span><span
+                                    style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                                    style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                                    style="font-size: .5rem; width: .2rem;">|</span><span>__</span><span
+                                    style="color: #99C817;"><strong>F</strong></span>
+                                  <% } %>
+                </div>
+              </td>
+              <td colspan="6" style="text-align: left; border-left: none;">
+                <div style="margin: .3rem .4rem;">
+                  <p style="font-size: .59rem; width: 100%;">I have received explaination of and agreed to the items
+                    listed above, and
+                    accept these terms and conditions.</p>
+                  <img src="<%= arrowImg %>" alt="" width="18px"
+                    style="background-color: #3b7693; border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                  <span style="font-size: .9rem;"><strong>Customer Signature</strong></span>
+                  <span style="font-size: .9rem; margin: 0rem .4rem;">
+                  </span>
+                  <span style="font-size: .9rem;"><strong>Date: <%= receptionDate %></strong></span>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <hr style="border: 1px dashed #3b7693; width: 100%; margin: 1.2rem 0rem;" />
+
+      <!-- Footer Section -->
+      <div style="height: auto;">
+
+        <div style="display: inline-block; width: 55%; font-size: .78rem;">
+          <span>
+            TERMS & CONDITIONS: Vehicles and contents are stored and driven by our staff at owner's risk.
+            <br />No responsibility attaches to us for loss by frost, fire, burglary, theft, accident, delay due to
+            non-availability of material or other causes whatsoever.
+            <br />If further essential work is required we will proceed at our discretion. New parts will be supplied
+            and
+            fitted as required. Estimates are provisional and not binding.
+            <br />All manufactured goods supplied subject to the terms & condition laid down by the manufacturer.
+            <br />CASH ON DELIVERY: Unless credit arrangement satisfactory to ourselves have made in advanced. An
+            express
+            mechanics lien is hereby acknowledge to secure the amount of repairs thereto.
+            <br />"I/We authorise the itemised work to be carried out on the above vehicle and agree to the terms
+            & condition printed herein. I/We will be responsible for payment of this account at your customary rates and
+            charges."
+          </span>
+        </div>
+        <div style="display: inline-block; width: 42%; font-size: .75rem; vertical-align: top; text-align: left;">
+          <div style="width: 100%; text-align: right;  margin-bottom: .2rem;">
+            <span style="font-size: .65rem;">Tel : </span>
+            <span style="font-size: .65rem;">+255</span>
+          </div>
+          <div style="display: inline-block; text-align: center; margin-right: 2rem; width: 42%;">
+            <span>Owner Authorisation : </span><span>LP.O No.</span>
+            <div
+              style="border: .15rem solid #3b7693; width: 100%; height: 15%; margin-top: .2rem; padding-left: .12rem; padding-right: .12rem; padding-top: .25rem; padding-bottom: .25rem;">
+              <span>
+                &nbsp;
+              </span>
+            </div>
+          </div>
+          <div style="display: inline-block; text-align: center; width: 42%;">
+            <span>Vehicle Registration No. : </span>
+            <div
+              style="border: .15rem solid #3b7693; width: 100%; height: 15%; margin-top: .2rem; padding-left: .12rem; padding-right: .12rem; padding-top: .25rem; padding-bottom: .25rem;">
+              <span>
+                <%= vehicleRegNo %>
+              </span>
+            </div>
+          </div>
+          <div
+            style="display: inline-block; text-align: left; margin-right: 2rem; width: 55%; margin-top: .2rem; vertical-align: baseline;">
+            <span style="font-size: 1rem;"><strong>TOYOTA</strong></span>
+            <span style="font-size: .8rem; vertical-align: baseline; font-weight: 400; margin-left: .75rem;">TOYOTA
+              TANZANIA LTD</span>
+          </div>
+          <div style="display: inline-block; text-align: center; width: 32%; margin-top: .2rem;">
+            <span style="font-size: .6rem;"><strong>Customer Care :</strong></span><br />
+          </div>
+          <div
+            style="display: inline-block; text-align: left; margin-right: 2rem; width: 60%; margin-top: .1rem; vertical-align: bottom;">
+            <span style="font-size: .8rem;"><strong>Service Advisor Phone: </strong></span>
+            <span
+              style="font-size: .7rem; vertical-align: baseline; font-weight: 400; margin-left: .2rem;">______________</span>
+          </div>
+          <div style="display: inline-block; text-align: center; width: 30%; margin-top: .1rem;">
+            <span style="font-size: .6rem;">Tel: 0786 TOYOTA</span>
+          </div>
+          <div style="display: inline-block; text-align: left; width: 100%; margin-top: .1rem;">
+            <span style="font-size: .6rem;">
+              N.B. PLEASE KEEP THIS CARD IN A SAFE PLACE IN YOUR INTEREST YOUR VEHICLES KEYS WILL NOT BE RELEASED UNLESS
+              THIS CARD IS PRESENTED.
+            </span>
+            <br /><span style="font-size: .65rem;">
+              <strong>
+                Please remove all valuables from your vehicle.<br />
+                For information on progress of your Job or Vehicle, please call Service Advisor above.
+              </strong>
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- First Page - Customer Order - End -->
+
+      <!-- Third Page - Diagnosis Questionnaire - Start -->
+      <% if(diagnosticQuestionnaire===true ){ %>
+        <!-- Header Section -->
+        <div style="height: 100px; margin-top: .8rem; ">
+          <div style="display: inline-block;">
+            <div style="margin: 0rem .2rem; padding: .2rem;">
+              <!-- <img style="display: inline-block; margin: 0rem .2rem;" src="<%= checked %>" width="20px" height="20px"> -->
+              <h2 style="display: inline-block; margin: 0rem .2rem; padding: 0;">TOYOTA</h2>
+              <h2 style="display: inline-block; font-weight: 400; margin-left: 2rem;">Diagnostic Questionnaire</h2>
+            </div>
+          </div>
+          <div style="display: inline-block; margin-left: 8rem; padding: .2rem;">
+            <div style="width:100%; height: 40%; padding: .5rem;">
+              <h2 style="text-align: center; font-size: 1.5rem; font-weight: 800;"><strong>
+                  <%= orderNo %>
+                </strong></h2>
+            </div>
+          </div>
+          <div style="display: block; height: 100px; width: 30%; padding: .2rem; float: right;">
+            <div
+              style="display: inline-block; text-align: center; border: .1rem solid #3b7693; width:48%; height: 40%; margin-top: 1.4rem; padding-top: .2rem; padding-bottom: .2rem; background-color: #f7fbff;">
+              <img src="<%- priority==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                style="vertical-align: -5%; margin-left: .5rem;" />
+              <h2 style="display: inline-block; margin: .2rem; font-weight: 200;">PRIORITY</h2>
+            </div>
+            <div
+              style="display: inline-block; text-align: center; border: .1rem solid #3b7693; width:48%; height: 40%; margin-top: 1.4rem; padding-top: .2rem; padding-bottom: .2rem; background-color: #f7fbff;">
+              <img src="<%- waiting==true ? checked : unchecked %>" width="18px" height="18px" alt=""
+                style="vertical-align: -5%; margin-left: .5rem;" />
+              <h2 style="display: inline-block; margin: .2rem; font-weight: 200;">WAITING</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- First 2 Tables -->
+        <div style="width: 100%; margin: .8rem .0rem; page-break-before: always;">
+
+          <!-- Table 1 -->
+          <div style="display: inline-block; width: 52%;">
+            <table style="width: 100%; font-size: .7rem; border: .1rem solid #3b7693;">
+              <tr>
+                <th style="text-align: center;">
+                  <div style="margin: .5rem .4rem;">
+                    <img src="<%- PM==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">PM</span>
+                  </div>
+                </th>
+                <th style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= KM %>
+                    </span>
+                    <span>K</span>
+                  </div>
+                </th>
+                <th style="text-align: center;">
+                  <div style="margin: .4rem .4rem;">
+                    <img src="<%- GR==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">GR</span>
+                  </div>
+                </th>
+                <th style="text-align: center;">
+                  <div style="margin: .4rem .4rem;">
+                    <img src="<%- WR==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">WR</span>
+                  </div>
+                </th>
+                <th style="text-align: center;">
+                  <div style="margin: .4rem .1rem;">
+                    <img src="<%- internal==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">Internal</span>
+                  </div>
+                </th>
+                <th style="border-left: .1rem solid #3b7693; text-align: center;">
+                  <div style="margin: .4rem .4rem;">
+                    <img src="<%- appointment==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">Appointment</span>
+                  </div>
+                </th>
+                <th style="text-align: center;">
+                  <div style="margin: .4rem .4rem;">
+                    <img src="<%- walkIn==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">Walk-in</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="border-bottom: .1rem solid #3b7693;">
+                <th colspan="2" style="text-align: left;">
+                  <div style="margin: .55rem .4rem;">
+                    <img src="<%- pickUp==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">Pick-up</span>
+                  </div>
+                </th>
+                <td colspan="3" style="text-align: center;">
+                  <div style="margin: .55rem .4rem;">
+                    <div></div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div style="margin: .6rem .4rem; text-align: center;">
+                    <span></span>
+                  </div>
+                </td>
+              </tr>
+              <!-- Reception for repair -->
+              <tr style="border: .15rem solid #3b7693;">
+                <th rowspan="2" colspan="2" style="text-align: center; font-size: .9rem; background-color: #dff0f8;">
+                  <div style="color: #3b7693;">
+                    Reception <br /> (for Repair)
+                  </div>
+                </th>
+                <td colspan="3">
+                  <div style="margin: .4rem .4rem;">
+                    <span>Date : </span>
+                    <span>
+
+                    </span>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div style="margin: .4rem .4rem;">
+                    <span>Time: </span>
+                    <span>______ : ______</span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .15rem solid #3b7693;">
+                <td colspan="5">
+                  <div style="margin: .4rem .4rem;">
+                    <span>Changes : </span>
+                  </div>
+                </td>
+              </tr>
+              <!-- Delivery for repair -->
+              <tr style="border: .15rem solid #3b7693;">
+                <th rowspan="2" colspan="2" style="text-align: center; font-size: .9rem; background-color: #dff0f8;">
+                  <div>
+                    Delivery <br /> (for Repair)
+                  </div>
+                </th>
+                <td colspan="3">
+                  <div style="margin: .4rem .4rem;">
+                    <span>Date : </span>
+                    <span>00/00/0000</span>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div style="margin: .4rem .4rem;">
+                    <span>Time: </span>
+                    <span>______ : ______</span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .15rem solid #3b7693;">
+                <td colspan="5">
+                  <div style="margin: .4rem .4rem;">
+                    <span>Changes : </span>
+                  </div>
+                </td>
+              </tr>
+              <!-- Reception for Diagnosis -->
+              <tr style="border: .1rem solid #3b7693;">
+                <th rowspan="2" colspan="2" style="text-align: center; font-size: .9rem; background-color: #dff0f8;">
+                  <div style="margin: .4rem .4rem;">
+                    Reception <br /> (for Diagnosis)
+                  </div>
+                </th>
+                <td colspan="5">
+                  <div style="margin: .4rem .4rem;">
+                    <span>___________________________________</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5">
+                  <div style="margin: .4rem .4rem;">
+                    <span>___________________________________</span>
+                  </div>
+                </td>
+              </tr>
+              <!-- Delivery for Diagnosis -->
+              <tr style="border: .1rem solid #3b7693;">
+                <th rowspan="2" colspan="2" style="text-align: center; font-size: .9rem; background-color: #dff0f8;">
+                  <div style="margin: .4rem .4rem;">
+                    Delivery <br /> (for Diagnosis)
+                  </div>
+                </th>
+                <td colspan="5">
+                  <div style="margin: .4rem .4rem;">
+                    <span>___________________________________</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5">
+                  <div style="margin: .4rem .4rem;">
+                    <span>___________________________________</span>
+                  </div>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+
+          <!-- Table 2 -->
+          <div style="display: block; width: 47%; float: right;">
+            <table class="border-none" style="width: 100%; font-size: .7rem; border: .1rem solid #3b7693;">
+              <tr style="border: .1rem solid #3b7693;">
+                <th colspan="1" style="text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Repair Order No.: </span>
+                  </div>
+                </th>
+                <td colspan="2">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= RepairOrderNo %>
+                    </span>
+                  </div>
+                </td>
+                <th colspan="1" style="border-left: .1rem solid #3b7693;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Date :</span>
+                  </div>
+                </th>
+                <td colspan="2" style="text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= RepairOrderDate %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693;">
+                <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Name</span>
+                  </div>
+                </th>
+                <td colspan="2" style="text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= cname %>
+                    </span>
+                  </div>
+                </td>
+                <th colspan="1" style="border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Vehicle <br /> Reg. No.</span>
+                  </div>
+                </th>
+                <td colspan="2" style="text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= vehicleRegNo %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693;">
+                <th rowspan="2" colspan="1" style="text-align: center; background-color: #dff0f8;">
+                  <div style="margin: .2rem .4rem;">
+                    <span>Address</span>
+                  </div>
+                </th>
+                <td colspan="2" rowspan="2">
+                  <div style="margin: .2rem .4rem;">
+                    <span>
+                      <%= caddress %>
+                    </span>
+                  </div>
+                </td>
+                <th colspan="1"
+                  style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                  <div style="margin: .2rem .4rem;">
+                    <span>Model <br /> (Year)</span>
+                  </div>
+                </th>
+                <td colspan="2" style="text-align: left;">
+                  <div style="margin: .2rem .4rem;">
+                    <span>
+                      <%= modelYear %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693;">
+                <th colspan="1"
+                  style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                  <div style="margin: .2rem .4rem;">
+                    <span>Model <br /> Code</span>
+                  </div>
+                </th>
+                <td colspan="2" style="text-align: left;">
+                  <div style="margin: .2rem .4rem;">
+                    <span>
+                      <%= modelCode %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693;">
+                <th rowspan="2" colspan="1" style="text-align: center; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Contact <br /> Info</span>
+                  </div>
+                </th>
+                <td rowspan="2" colspan="2">
+                  <div style="margin: .3rem .4rem;">
+                    <img src="<%= mobileTeleNumberStatus==true ? checked : unchecked %>" width="18px" height="18px"
+                      alt="" />
+                    <span style="margin-left: .1rem; vertical-align: 35%;">Mobile</span>
+                    <img src="<%= homeTeleNumberStatus==true ? checked : unchecked %>" width="18px" height="18px"
+                      alt="" />
+                    <span style="margin-left: .1rem; vertical-align: 35%;">Home</span><br />
+                    <img src="<%= officeTeleNumberStatus==true ? checked : unchecked %>" width="18px" height="18px"
+                      alt="" />
+                    <span style="margin-left: .1rem; vertical-align: 35%;">Office &nbsp;</span>
+                    <img src="<%= cemailStatus==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="margin-left: .1rem; vertical-align: 35%;">Email</span><br />
+                    <img src="<%= othersStatus==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="margin-left: .1rem; vertical-align: 35%;">Others</span>
+                  </div>
+                </td>
+                <th colspan="1"
+                  style="text-align: center; border-left: .1rem solid #3b7693; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>VIN No.</span>
+                  </div>
+                </th>
+                <td colspan="2" style="text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= vinNo %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693;">
+                <th colspan="1" style="text-align: center; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Color <br />Code</span>
+                  </div>
+                </th>
+                <td colspan="2">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= colorCode %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <!-- Accessories Installation -->
+              <tr style="border: .15rem solid #3b7693; border-bottom: none; background-color: #dff0f8">
+                <th colspan="6" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <input type="checkbox" />
+                    <span style="margin-left: .2rem; vertical-align: 20%;">Accessories
+                      Installation</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="border: .15rem solid #3b7693; border-top: none; border-bottom: none;">
+                <td colspan="6">
+                  <div style="margin: .4rem .4rem;">
+                    <span>_______________________</span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .15rem solid #3b7693; border-top: none; border-bottom: none;">
+                <td colspan="6">
+                  <div style="margin: .4rem .4rem;">
+                    <span>_______________________</span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .15rem solid #3b7693; border-top: none;">
+                <td colspan="6">
+                  <div style="margin: .4rem .4rem;">
+                    <span>_______________________</span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- 3rd Table -->
+        <div style="width: 100%; margin: .8rem .0resm; margin-bottom: .8rem;">
+
+          <div style="width: 100%;">
+            <table style="width: 100%; font-size: .8rem; border: .15rem solid #3b7693;">
+              <tr style="border: .1rem solid #3b7693; text-align: center;">
+                <th colspan="13" style="background-color: #dff0f8; width: 40%;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Symptoms And Conditions</span>
+                  </div>
+                </th>
+              </tr>
+
+              <!-- Category -->
+              <tr style="text-align: center;">
+                <th rowspan="2" colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Category</span>
+                  </div>
+                </th>
+                <% for (element of category) { %>
+                  <td colspan="1" style="border-bottom: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Engine" && element.status==true ){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Engine</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Chassis" && element.status==true ){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Chassis</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-bottom: none; border-left: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Electricity" && element.status==true ){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Electricity</span>
+                    </div>
+                  </td>
+                  <% } %>
+
+                    <th rowspan="16" colspan="1" style="width: auto; background-color: #dff0f8;">
+                      <div style="margin: .3rem .5rem;">
+                        <span>Indicator <br /> Lamp</span>
+                      </div>
+                    </th>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carEngine %>" width="6%" height="6%"
+                          style="margin: .2rem; vertical-align: -50%;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Malfunction Indicator Lamp</span>
+                      </div>
+                      <div style="display: block; margin: .2rem .2rem; margin-left: 2.5rem; ">
+                        <span style="font-size: 1.2rem; vertical-align: 12%;">(</span>
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Lighting</span>
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Flashing</span>
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Multiple Flashing:
+                        </span><span>_____________</span>
+                        <span style="font-size: 1.2rem; vertical-align: 12%;">)</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (element of category) { %>
+                  <td colspan="1" style="border-top: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Noise" && element.status==true ){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Noise</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-top: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Vibration" && element.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Vibration</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-top: none; border-left: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Others" && element.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Others ( <%= element.text %> )</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="margin-left: .2rem; vertical-align: 20%;">Others ( )</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+
+              <!-- Ignition -->
+              <tr style="text-align: center;">
+                <th rowspan="2" colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Ignition</span>
+                  </div>
+                </th>
+
+                <% for (element of ignition) { %>
+                  <td colspan="5" style="text-align: left; border-bottom: none; border-right: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem;">
+                      <% if(element.name=="Cranking" && element.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Cranking</span>
+                    </div>
+                    <div style="display: inline-block; margin: .3rem .2rem;">
+                      <span style="font-size: 1.2rem; vertical-align: 12%; margin-right: .2rem;">(</span>
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">Yes</span>
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">No</span>
+                      <span style="font-size: 1.2rem; vertical-align: 12%; margin-left: .2rem;">)</span>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carOil %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -50%;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Low Engine Oil Pressure Warning
+                          Light</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (element of ignition) { %>
+                  <td colspan="5" style="border-top: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(element.name=="Engine Starting" && element.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Engine Starting</span>
+                    </div>
+                    <div style="display: inline-block; margin: .3rem .2rem;">
+                      <span style="font-size: 1.2rem; vertical-align: 12%; margin-right: .2rem;">(</span>
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">Yes</span>
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">No</span>
+                      <span style="font-size: 1.2rem; vertical-align: 12%; margin-left: .2rem;">)</span>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+
+              <!-- From When -->
+              <tr style="text-align: center;">
+                <th colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>From When</span>
+                  </div>
+                </th>
+                <% for (data of fromWhen) { %>
+                  <td colspan="1" style="border-bottom: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Recently" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Recently</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="1 Week Ago" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">1 Week Ago</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-bottom: none; border-left: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Others" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Others ( <%= data.text %> )</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="margin-left: .2rem; vertical-align: 20%;">Others ( )</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="2" colspan="6" style="text-align: left; width: 40% !important;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carEngineTemp %>" width="6%" height="6%" style="margin: .2rem;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">High Engine Coolant Temperature Warning
+                          Light</span>
+                      </div>
+                      <div
+                        style="display: inline-block; font-size: .5rem; vertical-align: 85%; margin-left: .65rem; margin-top: -50%;">
+                        <span>(Red)</span>
+                      </div>
+                    </td>
+              </tr>
+
+              <!-- Frequency -->
+              <tr style="text-align: center;">
+                <th rowspan="2" colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Frequency</span>
+                  </div>
+                </th>
+                <% for (data of frequency) { %>
+                  <td colspan="1" style="border-bottom: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Always" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Always</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Occasionally" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Occasionally</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-bottom: none; border-left: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="One Time Only" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">One Time Only</span>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (data of frequency) { %>
+                  <td colspan="5" style="border-top: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="One Time Only" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Others
+                          ( <%= data.text %> )</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="margin-left: .2rem; vertical-align: 20%;">Others
+                            ( )</span>
+                          <% } %>
+                    </div>
+                    <% } %>
+                  </td>
+                  <td rowspan="2" colspan="6" style="text-align: left;">
+                    <div style="display: inline-block; margin: .2rem .2rem;">
+                      <img src="<%= carEngineTemp %>" width="6%" height="6%" style="margin: .2rem;" />
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">Low Engine Coolant Temperature Warning
+                        Light</span>
+                    </div>
+                    <div
+                      style="display: inline-block; font-size: .5rem; vertical-align: 85%; margin-left: .65rem; margin-top: -50%;">
+                      <span>(Blue)</span>
+                    </div>
+                  </td>
+              </tr>
+              <!-- Place -->
+              <tr style="text-align: center;">
+                <th rowspan="3" colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Place</span>
+                  </div>
+                </th>
+                <% for (data of place) { %>
+                  <td colspan="2" style="border-bottom: none; border-right: none; text-align: left;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Ordinary Road" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Ordinary Road</span>
+                    </div>
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Highway" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Highway</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-bottom: none; border-left: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Highway" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Slope</span>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (data of place) { %>
+
+                  <td colspan="2" style="border-top: none; border-right: none; border-bottom: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Flat" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Flat</span>
+                    </div>
+                    <div style="display: inline-block; margin: .3rem .2rem; width: 69%; text-align: right !important;">
+                      <% if(data.name=="Rough/Dirt" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Rough/Dirt</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-top: none; border-left: none; border-bottom: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Bumpy" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Bumpy</span>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carEleSteering %>" width="10%" height="10%"
+                          style="margin: -.33rem; vertical-align: -35%;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Electric Power Steering System Warning
+                          Light</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (data of place) { %>
+                  <td colspan="5" style="border-top: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Bumpy" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Others
+                          ( <%= data.text %>)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="margin-left: .2rem; vertical-align: 20%;">Others
+                            ( )</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <!-- Weather -->
+              <tr style="text-align: center;">
+                <th rowspan="2" colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Weather</span>
+                  </div>
+                </th>
+                <% for (data of weather) { %>
+                  <td colspan="1" style="border-bottom: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Fine" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Fine</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Cloudy" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Cloudy</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Bumpy" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Rain</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Snow" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Snow</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Windy" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Windy</span>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carAntiLock %>" width="6%" height="6%"
+                          style="margin: .2rem; vertical-align: -50%;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Anti-Lock Break System Warning
+                          Light</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (data of weather) { %>
+                  <td colspan="2" style="border-top: none; border-right: none; border-bottom: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Others" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Others ( <%= data.text %>)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="margin-left: .2rem; vertical-align: 20%;">Others ( )</span>
+                          <% } %>
+
+                    </div>
+                  </td>
+                  <td colspan="3" style="border: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Outside Temp" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Outside Temp ( <%= data.text %> <sup
+                              style="font-size: .5rem;">o</sup>C)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="margin-left: .2rem; vertical-align: 20%;">Outside Temp ( <sup
+                              style="font-size: .5rem;">o</sup>C)</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+
+              <!-- Driving Conditions -->
+              <tr style="text-align: center;">
+                <th rowspan="9" colspan="1" style="width: auto; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Driving <br /> Conditions</span>
+                  </div>
+                </th>
+                <% for (data of drivingConditions) { %>
+                  <td colspan="1" style="border-bottom: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Forwarding" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Forwarding</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Parking" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Parking</span>
+                    </div>
+                  </td>
+                  <td colspan="3" style="border-bottom: none; border-left: none; border-right: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Backing-Up" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Backing-Up</span>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carVSControl %>" width="6%" height="6%"
+                          style="margin: .2rem; vertical-align: -50%;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">Vehicle Stability Control System Warning
+                          Light</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="1" style="border-top: none; border-right: none; border-bottom: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Accelerating" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Accelerating</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Constant" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Constant</span>
+                    </div>
+                  </td>
+                  <td colspan="2" style="border: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Decelerating" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Decelerating</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Breaking" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Breaking</span>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <tr style="text-align: center;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="5" style="border-bottom: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Vehicle Speed" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="vertical-align: 20%;">Vehicle Speed ( km/h)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="vertical-align: 20%;">Vehicle Speed ( km/h)</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: block; margin: .2rem .2rem;">
+                        <img src="<%= carSRS %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -50%;" />
+                        <input type="checkbox" />
+                        <span style="margin-left: .2rem; vertical-align: 20%;">SRS Warning
+                          Light</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: center;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="5" style="border-bottom: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Tachometer" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="vertical-align: 20%;">Tachometer ( rpm)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="vertical-align: 20%;">Tachometer ( rpm)</span>
+                          <% } %>
+
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <tr style="text-align: center;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="3" style="border-bottom: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Shift Position" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="vertical-align: 20%;">Shift Position ( )</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="vertical-align: 20%;">Shift Position ( )</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Up" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Up</span>
+                    </div>
+                  </td>
+                  <td colspan="1" style="border-bottom: none; border-left: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Down" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Down</span>
+                    </div>
+                  </td>
+                  <% } %>
+                    <th rowspan="5" colspan="1" style="text-align: center; background-color: #dff0f8;">
+                      <div style="margin: .3rem .2rem;">
+                        <span style="vertical-align: 20%;">Air <br /> Conditioner</span>
+                      </div>
+                    </th>
+                    <td rowspan="2" colspan="6" style="text-align: left;">
+                      <div style="display: inline-block; margin: .3rem .4rem; text-align: left;">
+                        <span style="vertical-align: 20%;">Fan Speed Setting</span>
+                      </div>
+                      <div style="display: inline-block; margin: .3rem .2rem; text-align: left;">
+                        <span style="vertical-align: 10%; font-size: 1.2rem;">(</span>
+                        <img src="<%- fanspeedAuto==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                        <span style="vertical-align: 20%;">Auto</span>
+                        <img src="<%- fanspeedLow==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                        <span style="vertical-align: 20%;">Low</span>
+                        <img src="<%- fanspeedMid==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                        <span style="vertical-align: 20%;">Mid</span>
+                        <img src="<%- fanspeedHigh==true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                        <span style="vertical-align: 20%;">High</span>
+                        <span style="vertical-align: 10%; font-size: 1.2rem;">)</span>
+                      </div>
+                      <div style="display: block; margin: .3rem .4rem; text-align: left;">
+                        <span style="vertical-align: 20%;">Temp Setting ( <%= tempSetting %> )</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: left;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="3" style="border-bottom: none; border-right: none; border-top: none;">
+                    <div style="display: inline-block; margin: .3rem .2rem;">
+                      <% if(data.name=="Turning" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="margin-left: .2rem; vertical-align: 20%;">Turning</span>
+                    </div>
+                    <div style="display: inline-block; margin: .3rem .2rem;">
+                      <span style="font-size: 1.2rem; vertical-align: 12%; margin-right: .2rem;">(</span>
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">Right</span>
+                      <input type="checkbox" />
+                      <span style="margin-left: .2rem; vertical-align: 20%;">Left</span>
+                      <span style="font-size: 1.2rem; vertical-align: 12%; margin-left: .2rem;">)</span>
+                    </div>
+                  </td>
+                  <td colspan="2" style="border-bottom: none; border-left: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Traffic Jammed" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <% } %>
+                            <span style="vertical-align: 20%;">Traffic Jammed</span>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <tr style="text-align: center;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="5" style="border-bottom: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Number of Passengers" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="vertical-align: 20%;">Number of Passengers
+                          ( )</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="vertical-align: 20%;">Number of Passengers
+                            ( )</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+                    <td rowspan="3" colspan="6" style="border-bottom: none; border-right: none; border-top: none;">
+                      <div style="display: block; margin: .3rem .4rem; text-align: left;">
+                        <span style="vertical-align: 20%;">Recirculation Mode</span>
+                      </div>
+                      <div style="display: block; margin: .3rem .4rem; text-align: left;">
+                        <span style="vertical-align: 10%; font-size: 1.2rem;">(</span>
+                        <img src="<%- recirculationAuto==true ? checked : unchecked %>" width="18px" height="18px"
+                          alt="" />
+                        <span style="vertical-align: 20%;">Auto</span>
+                        <img src="<%- recirculationFWD==true ? checked : unchecked %>" width="18px" height="18px"
+                          alt="" />
+                        <img src="<%= carAC1 %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -40%;" />
+                        <img src="<%- recirculationFWDLAF==true ? checked : unchecked %>" width="18px" height="18px"
+                          alt="" />
+                        <img src="<%= carAC2 %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -40%;" />
+                        <img src="<%- recirculationUAFLAF==true ? checked : unchecked %>" width="18px" height="18px"
+                          alt="" />
+                        <img src="<%= carAC3 %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -40%;" />
+                        <img src="<%- recirculationUAF==true ? checked : unchecked %>" width="18px" height="18px"
+                          alt="" />
+                        <img src="<%= carAC4 %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -40%;" />
+                        <img src="<%- recirculationLAF==true ? checked : unchecked %>" width="18px" height="18px"
+                          alt="" />
+                        <img src="<%= carAC5 %>" width="6%" height="6%" style="margin: .2rem; vertical-align: -40%;" />
+                        <span style="vertical-align: 10%; font-size: 1.2rem;">)</span>
+                      </div>
+                    </td>
+              </tr>
+              <tr style="text-align: center;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="5" style="border-bottom: none; border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Vehicle Load" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="vertical-align: 20%;">Vehicle Load ( kg)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="vertical-align: 20%;">Vehicle Load ( kg)</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+              <tr style="text-align: center;">
+                <% for (data of drivingConditions) { %>
+                  <td colspan="5" style=" border-right: none; border-top: none;">
+                    <div style="margin: .3rem .2rem; text-align: left;">
+                      <% if(data.name=="Vehicle Load" && data.status==true){ %>
+                        <img src="<%= checked %>" alt="" width="18px"
+                          style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                        <span style="vertical-align: 20%;">Towing Load ( kg)</span>
+                        <% } else { %>
+                          <img src="<%= unchecked %>" alt="" width="18px"
+                            style=" border-radius: 100%; padding: .1rem;  margin-bottom: -.1rem;">
+                          <span style="vertical-align: 20%;">Towing Load ( kg)</span>
+                          <% } %>
+                    </div>
+                  </td>
+                  <% } %>
+              </tr>
+
+              <!-- Memo Test Drive -->
+              <tr style="text-align: center;">
+                <td colspan="6" style="border-bottom: none;">
+                  <div style="margin: .3rem .4rem; text-align: left;">
+                    <span style="vertical-align: 20%;">Memo</span>
+                    <input type="checkbox" />
+                    <span style="vertical-align: 20%;"> : Test Drive</span>
+                  </div>
+                </td>
+                <th colspan="3" style="background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <span>Location Code</span>
+                  </div>
+                </th>
+                <th colspan="2" style="border-bottom: none; background-color: #dff0f8; width: 12%;">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <span>Date & Time</span>
+                  </div>
+                </th>
+                <th colspan="2" style="border-bottom: none; background-color: #408cb0;">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <span style="color: #fff;">Staff Name</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="text-align: center;">
+                <td colspan="6" style="border-top: none;">
+                  <div style="margin: .3rem .4rem; text-align: left;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <th colspan="1" style="border-top: none; background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem; text-align: left;">
+                    <span></span>
+                  </div>
+                </th>
+                <th colspan="1" style="border-top: 1px; background-color: #dff0f8; font-size: .7rem;">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <span>Key</span>
+                  </div>
+                </th>
+                <th colspan="1" style="background-color: #dff0f8; font-size: .7rem;">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <span>Stall</span>
+                  </div>
+                </th>
+                <td colspan="2" style="border-bottom: none; text-align: left;">
+                  <div style="margin: .3rem .4rem; vertical-align: baseline;">
+                    <span style="vertical-align: baseline;">Date </span>
+                    <span style="vertical-align: baseline; margin-left: .5rem;">
+                      <%= date %>
+                    </span> <br />
+                  </div>
+                </td>
+                <td rowspan="2" colspan="2" style="border-bottom: none; text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= staffName %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="text-align: center;">
+                <td colspan="6" style="border-top: none;">
+                  <div style="margin: .3rem .4rem; text-align: left;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <th colspan="1"
+                  style="border-top: none; font-size: .7rem; text-align: center; background-color: #dff0f8;">
+                  <div style="margin: .1rem .3rem;">
+                    <span>Waiting for <br /> Service</span>
+                  </div>
+                </th>
+                <td colspan="1" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= waitingForServiceKey %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= waitingForServiceStall %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="2" style="border-top:none; text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Time </span>
+                    <span style="margin-left: .5rem;">
+                      <%= time %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- 4th Table -->
+        <div style="width: 100%; margin: .8rem .0resm; margin-bottom: .8rem; page-break-before: always;">
+
+          <div style="width: 100%;">
+            <table style="width: 100%; font-size: .8rem; border: .15rem solid #3b7693;">
+              <!-- Diagnosis -->
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <th colspan="8" style="background-color: #dff0f8; width: 80%;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Diagnosis</span>
+                  </div>
+                </th>
+                <th colspan="2" style="background-color: #dff0f8; width: 20%; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Reproduction</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="8">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Inspection Details</span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <img src="<%- Reproduction== true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                    <span style="vertical-align: 30%;">Yes</span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem; text-align: center;">
+                    <span style="vertical-align: 30%;">No</span>
+                    <img src="<%- Reproduction== false ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="8">
+                  <div style="margin: .3rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div style="margin: .25rem .4rem; text-align: center;">
+                    <div style="display: inline-block; vertical-align: 50%;">
+                      <img src="<%- ReproductionConfirmSymptom== true ? checked : unchecked %>" width="18px"
+                        height="18px" alt="" />
+                    </div>
+                    <div style="margin-left: .8rem; display: inline-block; font-size: .75rem; text-align: center;">
+                      <span style="vertical-align: 30%;">Confirm symptom <br /> with customer</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="8">
+                  <div style="margin: .3rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <div style="margin: .25rem .4rem;">
+                    <span style="vertical-align: 20%;">Memo</span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="5">
+                  <div style="margin: .15rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="width: 5%; background-color: #dff0f8; text-align: center; font-weight: 600;">
+                  <div style="margin: .15rem .4rem;">
+                    <span>Start</span>
+                  </div>
+                </td>
+                <td colspan="2" style="width: 21%;">
+                  <div style="margin: .15rem .4rem;">
+                    <div style="display: inline-block; text-align: left;">
+                      <span>Date </span><br />
+                      <span style="margin-left: 2rem; margin-right: .4rem;">
+                        <%= DiagnosisStartDate %>
+                      </span>
+                    </div>
+                    <div style="display: inline-block; text-align: left;">
+                      <span>Time</span><br>
+                      <span style="margin-left: 2rem;">
+                        <%= DiagnosisStartTime %>
+                      </span>
+                    </div>
+                  </div>
+                </td>
+                <td rowspan="2" colspan="2">
+                  <div style="margin: .25rem .4rem;">
+                    <span style="vertical-align: 20%;">
+                      <%= ReproductionMemo %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="5">
+                  <div style="margin: .15rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="width: 5%; background-color: #dff0f8; text-align: center; font-weight: 600;">
+                  <div style="margin: .15rem .4rem;">
+                    <span>End</span>
+                  </div>
+                </td>
+                <td colspan="2" style="width: 21%;">
+                  <div style="margin: .15rem .4rem;">
+                    <div style="display: inline-block; text-align: left;">
+                      <span>Date </span><br />
+                      <span style="margin-left: 2rem; margin-right: .4rem;">
+                        <%= DiagnosisEndDate %>
+                      </span>
+                    </div>
+                    <div style="display: inline-block; text-align: left;">
+                      <span>Time</span><br>
+                      <span style="margin-left: 2rem;">
+                        <%= DiagnosisEndTime %>
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- Main Cause -->
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <th colspan="5" style="background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Main Cause</span>
+                  </div>
+                </th>
+                <th colspan="2" style="background-color: #dff0f8; width: 18%; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>DTC</span>
+                  </div>
+                </th>
+                <th colspan="1" style="background-color: #dff0f8; width: 8%; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Status</span>
+                  </div>
+                </th>
+                <th colspan="2" style="background-color: #dff0f8; width: 20%; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Freeze Frame Data</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="5">
+                  <div style="margin: .3rem .4rem;">
+                    <input type="checkbox" />
+                    <span style="vertical-align: 20%;">Technical Information ( Ref. No. : ____________)</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center; width: 2% !important;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>1</span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>______________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>C / P / H</span>
+                  </div>
+                </td>
+                <td colspan="2" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%; margin-left: .1rem;">Available</span>
+                    </div>
+                    <span style="font-size: 1rem; margin: .25rem; vertical-align: 10%; color: #000;">/</span>
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%;">N / A</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="5">
+                  <div style="margin: .3rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center; width: 2% !important;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>2</span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>______________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>C / P / H</span>
+                  </div>
+                </td>
+                <td colspan="2" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%; margin-left: .1rem;">Available</span>
+                    </div>
+                    <span style="font-size: 1rem; margin: .25rem; vertical-align: 10%; color: #000;">/</span>
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%;">N / A</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="5">
+                  <div style="margin: .3rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center; width: 2% !important;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>3</span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>______________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>C / P / H</span>
+                  </div>
+                </td>
+                <td colspan="2" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%; margin-left: .1rem;">Available</span>
+                    </div>
+                    <span style="font-size: 1rem; margin: .25rem; vertical-align: 10%; color: #000;">/</span>
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%;">N / A</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="5">
+                  <div style="margin: .3rem .4rem;">
+                    <span>__________________________________________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center; width: 2% !important;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>4</span>
+                  </div>
+                </td>
+                <td colspan="1">
+                  <div style="margin: .3rem .4rem;">
+                    <span>______________</span>
+                  </div>
+                </td>
+                <td colspan="1" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>C / P / H</span>
+                  </div>
+                </td>
+                <td colspan="2" style="text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%; margin-left: .1rem;">Available</span>
+                    </div>
+                    <span style="font-size: 1rem; margin: .25rem; vertical-align: 10%; color: #000;">/</span>
+                    <div style="display: inline-block;">
+                      <input type="checkbox" />
+                      <span style="vertical-align: 20%;">N / A</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- Job Instruction -->
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <th colspan="8" style="background-color: #dff0f8;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>Job Instruction</span>
+                  </div>
+                </th>
+                <th colspan="2"
+                  style="border: .15rem solid #3b7693; background-color: #408cb0; width: 18%; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span style="color: #fff;">Staff Name</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="8" rowspan="3">
+                  <div style="margin: .3rem .4rem;">
+                    <span style="vertical-align: 20%;">
+                      <%= jobInstrunctions %>
+                    </span>
+                  </div>
+                </td>
+                <td colspan="2" style="border: .15rem solid #3b7693;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>
+                      <%= jobInstStaffName %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="2" style="text-align: center;">
+                  <div style="margin: .3rem .1rem;">
+                    <div style="display: inline; margin: .3rem .1rem;">
+                      <span style="margin-left: .1rem; vertical-align: 20%;">Warranty</span>
+                    </div>
+                    <div style="display: inline; margin: .3rem .1rem;">
+                      <span style="font-size: 1.2rem; vertical-align: 12%;">(</span>
+                      <img src="<%- warrenty== true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                      <span style="vertical-align: 30%;">Yes</span>
+                      <span style="font-size: 1rem; margin: .15rem; vertical-align: 10%; color: #000;">/</span>
+                      <img src="<%- warrenty== false ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                      <span style="vertical-align: 30%;">No</span>
+                      <span style="font-size: 1.2rem; vertical-align: 12%;">)</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="2" style="text-align: center;">
+                  <div style="margin: .3rem .1rem;">
+                    <div style="display: inline; margin: .3rem .1rem;">
+                      <span style="margin-left: .1rem; vertical-align: 20%;">DTR</span>
+                    </div>
+                    <div style="display: inline; margin: .3rem .1rem;">
+                      <span style="font-size: 1.2rem; vertical-align: 12%;">(</span>
+                      <img src="<%- warrenty== true ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                      <span style="vertical-align: 20%;">Yes</span>
+                      <span style="font-size: 1rem; margin: .15rem; vertical-align: 10%; color: #000;">/</span>
+                      <img src="<%- warrenty== false ? checked : unchecked %>" width="18px" height="18px" alt="" />
+                      <span style="vertical-align: 20%;">No</span>
+                      <span style="font-size: 1.2rem; vertical-align: 12%;">)</span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <!-- DIST Support -->
+              <!-- Request -->
+              <tr style="border: .1rem solid #3b7693; text-align: center;">
+                <th colspan="10" style="background-color: #dff0f8; width: 100%;">
+                  <div style="margin: .3rem .4rem;">
+                    <span>DIST Support</span>
+                  </div>
+                </th>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <th rowspan="2" colspan="1" style="background-color: #dff0f8; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span style="vertical-align: 20%;">Request</span>
+                  </div>
+                </th>
+                <td colspan="4" rowspan="3">
+                  <div style="margin: .3rem .4rem; padding-top: 0px;">
+                    <span style="font-size: .5rem; vertical-align: top; position: fixed;">Memo</span><br />
+                    <span style="vertical-align: top;">
+                      <%= memo %>
+                    </span>
+                  </div>
+                </td>
+                <th rowspan="2" colspan="2"
+                  style="width: 10% !important; background-color: #dff0f8; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span style="vertical-align: 20%;">Telephone Support</span>
+                  </div>
+                </th>
+                <td colspan="3">
+                  <div style="margin: .15rem .4rem; width: 100%;">
+                    <div style="display: inline-block; width: 49%; text-align: left;">
+                      <span>Date </span><br />
+                      <span style="margin-left: 2rem; margin-right: .4rem;">
+                        <%= telephoneSupportDate %>
+                      </span>
+                    </div>
+                    <div style="display: inline-block; width: 49%; text-align: left;">
+                      <span>Time</span><br>
+                      <span style="margin-left: 2rem;">
+                        <%= telephoneSupportTime %>
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <th colspan="1" style="text-align: center; background-color: #408cb0;">
+                  <div style="margin: .15rem .4rem;">
+                    <span style="color: #fff;">Staff <br /> Name</span>
+                  </div>
+                </th>
+                <td colspan="2">
+                  <div style="margin: .15rem .4rem;">
+                    <span>
+                      <%= telephoneSupportStaffName %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+              <!-- Diagnosis,  Visit Support -->
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="1" style="text-align: left; width: 10%; border-right: 1px solid;">
+                  <div style="margin: .3rem .4rem;">
+                    <img src="<%- requestDiagnosis==true ? checked : unchecked %>" width="18px" height="18px" alt="">
+                    <span style="vertical-align: 30%;">Diagnosis</span>
+                  </div>
+                </td>
+                <th rowspan="2" colspan="2"
+                  style="width: 10% !important; background-color: #dff0f8; text-align: center;">
+                  <div style="margin: .3rem .4rem;">
+                    <span style="vertical-align: 20%;">Visit Support</span>
+                  </div>
+                </th>
+                <td colspan="3">
+                  <div style="margin: .15rem .4rem; width: 100%;">
+                    <div style="display: inline-block;  width: 49%; text-align: left;">
+                      <span>Date </span><br />
+                      <span style="margin-left: 2rem; margin-right: .4rem;">
+                        <%= visitSupportDate %>
+                      </span>
+                    </div>
+                    <div style="display: inline-block; width: 49%; text-align: left;">
+                      <span>Time</span><br>
+                      <span style="margin-left: 2rem;">
+                        <%= visitSupportTime %>
+                      </span>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr style="border: .1rem solid #3b7693; text-align: left;">
+                <td colspan="1" style="text-align: left;">
+                  <div style="margin: .3rem .4rem;">
+                    <img src="<%- requestRepair==true ? checked : unchecked %>" width="18px" height="18px" alt="">
+                    <span style="vertical-align: 30%;">Repair</span>
+                  </div>
+                </td>
+                <td colspan="4">
+                  <div style="margin: .3rem .4rem;">
+                    <img src="<%- prediction==true ? checked : unchecked %>" width="18px" height="18px" alt="">
+                    <span style="vertical-align: 20%;">Prediction</span>
+                  </div>
+                </td>
+                <th colspan="1" style="text-align: center; background-color: #408cb0;">
+                  <div style="margin: .15rem .4rem;">
+                    <span style="color: #fff;">Staff <br /> Name</span>
+                  </div>
+                </th>
+                <td colspan="2">
+                  <div style="margin: .15rem .4rem;">
+                    <span>
+                      <%= visitSupportStaffName %>
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <% } %>
+          <!-- Third Page - Diagnosis Questionnaire - End -->
+    </div>
+  </div>
+</body>
+
+</html>
